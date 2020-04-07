@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($window,$location,glideUserSession) {
+  /* widget controller */
+  var c = this;
+		c.data.activeForApproval = true;
+		c.data.activeForDashboard = true;
+	c.data.activeForAuditee = true;
+		var param = $location.search().id;
+		if(param == "dashboard"){
+				c.data.activeForApproval = false;
+				c.data.activeForAuditee = false;
+		} else if(param == "my_approvals") {
+				c.data.activeForDashboard = false;
+				c.data.activeForAuditee = false;
+		} else {
+				c.data.activeForDashboard = false;
+			c.data.activeForApproval = false;
+		}
+	glideUserSession.loadCurrentUser().then(function(currentUser) {
+					if(currentUser.hasRoleExactly('supervisor') == true){
+						c.addAutitee = false;
+					} else {						
+						c.addAutitee = true;
+					}
+	});
+		c.dashboardClicked = function(){
+			c.data.activeForDashboard = true;
+			c.data.activeForApproval = false;
+			$window.location= 'https://dev93518.service-now.com/serviceManagement?id=dashboard';
+		}
+		c.approvalClicked = function(){
+			c.data.activeForApproval = true;
+			c.data.activeForDashboard = false;
+		$window.location= 'https://dev93518.service-now.com/serviceManagement?id=my_approvals';
+
+		}
+	c.auditeeClicked = function(){
+			c.data.activeForApproval = false;
+			c.data.activeForDashboard = false;
+			c.data.activeForAuditee = true;
+		$window.location= 'https://dev93518.service-now.com/serviceManagement?id=add_auditee';
+
+		}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.tableNarrow{
+max-width: 850px;
+  width:100%;
+  margin: 0 auto;
+  float:left;
+}
+
+.tableContainer{
+  border: 1px solid #5A7F71;
+  padding: 30px; 
+  border-radius: 0 15px 15px 15px;
+  background:rgba(255,255,255,0.5);
+}
+
+.customTabs .tabButton{
+background-color: #5A7F71;
+  color:#FFF;
+  border:0;
+  padding: 8px 22px;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  margin: 0 10px 0 0;
+}
+
+.customTabs .tabButton.active{
+background-color:#293e40;
+}
+h1{margin: 20px 0 30px 0;}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>my_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>My header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-26 11:47:53</sys_created_on>
+        <sys_id>efdc128c1bd740101560a9b4bd4bcb4e</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>My header</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_efdc128c1bd740101560a9b4bd4bcb4e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-03 06:13:19</sys_updated_on>
+        <template><![CDATA[<div class="tableNarrow">
+<h1>Service Management Details</h1>
+  <div class="customTabs">
+    <button class="tabButton" ng-class="{active: c.data.activeForDashboard}" ng-click="c.dashboardClicked()">Dashboard</button>
+    <button class="tabButton" ng-class="{active: c.data.activeForApproval}" ng-click="c.approvalClicked()">Pending Approvals</button>
+    <button class="tabButton" ng-if="c.addAutitee" ng-class="{active: c.data.activeForAuditee}" ng-click="c.auditeeClicked()">Add Auditee</button>
+	</div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

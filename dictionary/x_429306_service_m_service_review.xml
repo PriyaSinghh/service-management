@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Service Review" max_length="40" name="x_429306_service_m_service_review" type="collection">
+        <element label="Auditee" max_length="60" name="auditee" type="string"/>
+        <element label="Question answer" max_length="4000" name="question_answer" type="simple_name_values"/>
+        <element label="Question weightage" max_length="4000" name="question_weightage" type="simple_name_values"/>
+        <element label="Request Type" max_length="60" name="request_type" type="string"/>
+        <element label="Review Comments" max_length="4000" name="review_comments" type="simple_name_values"/>
+        <element default="0" label="Score" max_length="40" name="score" type="integer"/>
+        <element label="Status" max_length="60" name="status" type="string"/>
+    </element>
+</database>

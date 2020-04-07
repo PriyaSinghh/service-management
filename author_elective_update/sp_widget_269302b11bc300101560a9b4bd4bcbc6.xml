@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>service_management_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Service management header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 10:11:09</sys_created_on>
+        <sys_id>269302b11bc300101560a9b4bd4bcbc6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Service management header</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_269302b11bc300101560a9b4bd4bcbc6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-19 10:13:21</sys_updated_on>
+        <template><![CDATA[<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sp_widget_269302b11bc300101560a9b4bd4bcbc6</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function() {  /* widget controller */  var c = this;}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;service_management_header&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Service management header&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-19 10:11:09&lt;/sys_created_on&gt;&lt;sys_id&gt;269302b11bc300101560a9b4bd4bcbc6&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Service management header&lt;/sys_name&gt;&lt;sys_package display_value="Service Management" source="x_429306_service_m"&gt;b93d5d7d1b0300101560a9b4bd4bcbfc&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Service Management"&gt;b93d5d7d1b0300101560a9b4bd4bcbfc&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_269302b11bc300101560a9b4bd4bcbc6&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-19 10:13:21&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="topnav"&gt;
+  &lt;a class="active" href="#home"&gt;Home&lt;/a&gt;
+  &lt;a href="#news"&gt;News&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;a href="#about"&gt;About&lt;/a&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1136117652</payload_hash>
+        <record_name>Service management header</record_name>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 10:13:21</sys_created_on>
+        <sys_id>66148ab11bc300101560a9b4bd4bcb4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1705cf010f90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-19 10:13:21</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>ee148ab158c300104409b72485912a4c</update_guid>
+        <update_guid_history>ee148ab158c300104409b72485912a4c:-1136117652,a4f34a31f8c30010fb1c9acb9597ceab:1675597946,aa9302b119c300107585a14452172ac7:-1858174975</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service management header">2debc16a1b4b40101560a9b4bd4bcb81</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 14:03:14</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>230a87450c714d4eb12e82591e342184</sys_id>
+        <sys_metadata>269302b11bc300101560a9b4bd4bcbc6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service management header</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sp_widget_269302b11bc300101560a9b4bd4bcbc6</sys_update_name>
+        <sys_update_version display_value="sp_widget_269302b11bc300101560a9b4bd4bcbc6">66148ab11bc300101560a9b4bd4bcb4d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-21 14:03:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order/>
+        <roles>x_429306_service_m.supervisor,admin,x_429306_service_m.inspector</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 07:27:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>322e157d1b0300101560a9b4bd4bcbe8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Inspection Questions</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sys_app_application_322e157d1b0300101560a9b4bd4bcbe8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-20 09:48:16</sys_updated_on>
+        <title>Inspection Questions</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

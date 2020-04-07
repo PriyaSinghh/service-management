@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <size>12</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">2f644eb11bc300101560a9b4bd4bcb4e</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 10:14:47</sys_created_on>
+        <sys_id>ef644eb11bc300101560a9b4bd4bcb50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_column_ef644eb11bc300101560a9b4bd4bcb50</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-19 10:14:47</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sp_column_ef644eb11bc300101560a9b4bd4bcb50</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><size>12</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">2f644eb11bc300101560a9b4bd4bcb4e</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-02-19 10:14:47</sys_created_on><sys_id>ef644eb11bc300101560a9b4bd4bcb50</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package><sys_policy/><sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope><sys_update_name>sp_column_ef644eb11bc300101560a9b4bd4bcb50</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-02-19 10:14:47</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>2071619166</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 10:14:47</sys_created_on>
+        <sys_id>27644eb11bc300101560a9b4bd4bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1705cf1604f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-19 10:14:47</sys_updated_on>
+        <type>Column</type>
+        <update_guid>6f644eb120c30010eac89e3554fc3751</update_guid>
+        <update_guid_history>6f644eb120c30010eac89e3554fc3751:2071619166</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">1474ceb11bc300101560a9b4bd4bcb57</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 10:14:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>35ca7bd6ac6743fea1a4b86414e314d1</sys_id>
+        <sys_metadata>ef644eb11bc300101560a9b4bd4bcb50</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sp_column_ef644eb11bc300101560a9b4bd4bcb50</sys_update_name>
+        <sys_update_version display_value="sp_column_ef644eb11bc300101560a9b4bd4bcb50">27644eb11bc300101560a9b4bd4bcb52</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-19 10:14:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

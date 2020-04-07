@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">0439842b1b0340101560a9b4bd4bcb65</sp_column>
+        <sp_widget display_value="inspection form">287326c21b4300101560a9b4bd4bcb89</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 11:43:31</sys_created_on>
+        <sys_id>bd425dff1b0700101560a9b4bd4bcb72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_instance_bd425dff1b0700101560a9b4bd4bcb72</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 11:43:31</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=bd425dff1b0700101560a9b4bd4bcb72"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sp_instance_bd425dff1b0700101560a9b4bd4bcb72</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">0439842b1b0340101560a9b4bd4bcb65</sp_column><sp_widget display_value="inspection form">287326c21b4300101560a9b4bd4bcb89</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-02-25 11:43:31</sys_created_on><sys_id>bd425dff1b0700101560a9b4bd4bcb72</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package><sys_policy/><sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope><sys_update_name>sp_instance_bd425dff1b0700101560a9b4bd4bcb72</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-02-25 11:43:31</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=bd425dff1b0700101560a9b4bd4bcb72"/></record_update>]]></payload>
+        <payload_hash>261106409</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 11:43:31</sys_created_on>
+        <sys_id>b5425dff1b0700101560a9b4bd4bcb75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1707c28c3850000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 11:43:31</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>fd425dff480700102239470e17aa7574</update_guid>
+        <update_guid_history>fd425dff480700102239470e17aa7574:261106409</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">e1df21fb1b8700101560a9b4bd4bcb0e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 13:52:39</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>cea16a04014c4f34bc95c8e7ae7bfc24</sys_id>
+        <sys_metadata>bd425dff1b0700101560a9b4bd4bcb72</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sp_instance_bd425dff1b0700101560a9b4bd4bcb72</sys_update_name>
+        <sys_update_version display_value="sp_instance_bd425dff1b0700101560a9b4bd4bcb72">b5425dff1b0700101560a9b4bd4bcb75</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 13:52:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

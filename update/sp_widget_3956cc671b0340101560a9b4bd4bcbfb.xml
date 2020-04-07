@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+.email-signup-thankyou{
+  font-family:sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #333;
+  padding:10%;
+  
+  .content{
+    margin: auto;  /* Magic! */
+    max-width:700px;
+    color:#333;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.55), 0 3px 6px rgba(0,0,0,0.23);
+    background:url('https://www.crafta.co.il/images/paper-plane.gif') no-repeat #fff;
+    background-position: right 5px bottom 5px;
+    background-size: 10em;
+    text-align:center;
+    position: relative;
+    padding:10%;
+    border-radius:5px;
+
+    .left-hole,.right-hole{
+      position: absolute;
+      width:20px; height:20px;
+      background:#333;
+      border-radius:50%;
+      top:15px;
+    }
+    .left-hole{
+      left:15px;
+      top:10px;
+    }
+    .right-hole{
+      right:15px;
+      top:10px;
+    }
+   
+    .main-content{
+      &gt; h1 {
+        color:green;
+        text-transform:uppercase;
+        margin-top:-2%;
+        font-size:2.5em;
+        font-weight:900;
+      }
+    }
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>thankyou</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>ThankYou</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-24 11:33:16</sys_created_on>
+        <sys_id>3956cc671b0340101560a9b4bd4bcbfb</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>ThankYou</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_3956cc671b0340101560a9b4bd4bcbfb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-24 11:36:12</sys_updated_on>
+        <template><![CDATA[<div class="header-custom email-signup-thankyou">
+  <div class="content">
+    <div class="left-hole"></div>
+    <div class="right-hole"></div>
+    <div class="main-content">
+      <h1>Success! You have submited the inspection Details.</h1>
+      <p>Thank you for your time.</p>
+      
+    </div>
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Auditee Details" max_length="40" name="x_429306_service_m_auditee_details" type="collection">
+        <element label="Auditee Address" max_length="140" name="auditee_address" type="string"/>
+        <element label="Auditee name" max_length="40" name="auditee_name" type="string"/>
+        <element label="Category" max_length="40" name="category" type="string"/>
+        <element label="Ratings" max_length="40" name="ratings" type="string"/>
+        <element label="Type" max_length="60" name="type" type="string"/>
+    </element>
+</database>

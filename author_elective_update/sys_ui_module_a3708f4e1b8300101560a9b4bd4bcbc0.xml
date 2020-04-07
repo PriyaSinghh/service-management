@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Service Details Review">9f708f4e1b8300101560a9b4bd4bcbbc</application>
+        <filter/>
+        <name>Service Details Reviews</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_429306_service_m.service_details_review_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-20 09:15:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a3708f4e1b8300101560a9b4bd4bcbc0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Details Reviews</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sys_ui_module_a3708f4e1b8300101560a9b4bd4bcbc0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-20 09:15:41</sys_updated_on>
+        <table>x_429306_service_m_service_details_review</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sys_ui_module_a3708f4e1b8300101560a9b4bd4bcbc0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Service Details Review">9f708f4e1b8300101560a9b4bd4bcbbc</application><filter/><name>Service Details Reviews</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_429306_service_m.service_details_review_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-02-20 09:15:41</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a3708f4e1b8300101560a9b4bd4bcbc0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Details Reviews</sys_name><sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package><sys_policy/><sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope><sys_update_name>sys_ui_module_a3708f4e1b8300101560a9b4bd4bcbc0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-02-20 09:15:41</sys_updated_on><table>x_429306_service_m_service_details_review</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>241116492</payload_hash>
+        <record_name>Service Details Reviews</record_name>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-20 09:15:41</sys_created_on>
+        <sys_id>ef708f4e1b8300101560a9b4bd4bcbc2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17061e1a02d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-20 09:15:41</sys_updated_on>
+        <type>Module</type>
+        <update_guid>2b708f4e02830010f371700be8e634c2</update_guid>
+        <update_guid_history>2b708f4e02830010f371700be8e634c2:241116492</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 07:26:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>55ea5aebd537492e9f2a457363f17164</sys_id>
+        <sys_metadata>a3708f4e1b8300101560a9b4bd4bcbc0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Details Reviews</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sys_ui_module_a3708f4e1b8300101560a9b4bd4bcbc0</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_a3708f4e1b8300101560a9b4bd4bcbc0">ef708f4e1b8300101560a9b4bd4bcbc2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-21 07:26:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

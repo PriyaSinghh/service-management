@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$window) {
+  /* widget controller */
+  var c = this;
+	c.data.auditee = $scope.data.auditee;
+	c.data.request_type = $scope.data.request_type;
+	c.data.question_answer = JSON.parse($scope.data.question_answer);
+	c.data.review_comments = JSON.parse($scope.data.review_comments);
+	c.data.questions_answers = [];
+	c.data.reviews = [];
+	for (var name in c.data.question_answer) {
+		var task = {};
+    task.question = name;
+		task.answer = c.data.question_answer[name];
+		c.data.questions_answers.push(task);
+ }
+	for (var comments in c.data.review_comments){
+		var tasks= {};
+    tasks.question = comments;
+		tasks.review = c.data.review_comments[comments];
+		c.data.reviews.push(tasks);
+ }
+	
+	c.goBack = function() {
+		
+		$window.location = 'https://dev93518.service-now.com/serviceManagement?id=dashboard';
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.form-group{
+ margin-bottom: 25px;
+}
+.fLabel{
+	clear:both;
+  width:100%;
+  color: #303030;
+  font-size: 15px;
+}
+.fLabel.comment{  
+  color: #707070;
+  font-size: 13px;
+}
+.inspDd{
+	width:100%;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, .06);
+  padding: 10px 15px;
+}
+.questions{
+margin-bottom: 15px;
+}
+
+.questions input[type=radio]{
+width: 20px;
+  height:20px;
+  margin-right: 10px;
+  float:left
+}
+.radioOptions{
+margin-right: 50px;
+  display: inline-block;
+}
+.questions span{
+  line-height: 25px;
+  float:left
+}
+.mainContainer{
+  border: 1px solid #5A7F71;
+    padding: 30px;
+    border-radius: 0 15px 15px 15px;
+    background: rgba(255, 255, 255, .5);
+    margin-bottom: 50px;
+}
+h1{
+margin-bottom:30px;
+  text-align:center;
+}
+input[type=text], textarea{
+	width:100%;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, .06);
+  padding: 10px 15px;
+}
+
+button { 
+        background-color: #5A7F71; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px auto; 
+        border: none; 
+        cursor: pointer; 
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px 1px rgba(76,175,80,0.5);
+    } 
+    /* set a hover effect for the button*/ 
+      
+    button:hover { 
+        opacity: 0.8; 
+    } </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>service_details</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Service Details</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+/* TO GET THE QUESTION BASED ON REQUEST TYPE FROM TABLE*/
+		data.question_answer = [];
+		//data.answer = [];
+		data.review_comments = [];
+		data.auditee = '';
+		data.request_type = '';
+		data.score = '';
+		data.params = $sp.getParameter('request_type');
+		var q = new GlideRecord('x_429306_service_m_service_review');
+		q.addQuery('auditee',data.params);
+		q.query();
+		while(q.next()){
+		data.question_answer.push(q.getDisplayValue('question_answer'));
+		//data.answer.push(q.getDisplayValue('answer'));
+		data.review_comments.push(q.getDisplayValue('review_comments'));
+		data.auditee = q.getDisplayValue('auditee');
+		data.request_type = q.getDisplayValue('request_type');
+		data.score = q.getDisplayValue('score');
+	}	
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 12:11:05</sys_created_on>
+        <sys_id>3d9851371b4700101560a9b4bd4bcb2a</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>Service Details</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_3d9851371b4700101560a9b4bd4bcb2a</sys_update_name>
+        <sys_updated_by>Supervisor</sys_updated_by>
+        <sys_updated_on>2020-02-27 10:51:53</sys_updated_on>
+        <template><![CDATA[<h1>Service Details Form</h1>
+<div class="mainContainer">
+    <div class="form-group">
+        <label class="fLabel" for="requestType">Reequest type:</label>
+        <input type="text" ng-model="c.data.request_type" disabled>
+    </div>
+    <div class="conditionalGroup">
+        <div class="form-group">
+            <label class="fLabel">Auditee name</label>
+            <input type="text" ng-model="c.data.auditee" disabled>
+        </div>
+        <div class="questions" ng-repeat="value in c.data.questions_answers">
+            <div class="form-group">
+                <label class="fLabel" ng-model="c.data.question">{{value.question}}</label>
+                <div class="radioOptions"><input name="{{value.question}}" ng-model="value.answer" value="true" id="true" type="radio" disabled><span>Yes</span></div>
+                <div class="radioOptions"><input name="{{value.question}}" ng-model="value.answer" value="false" id="false" type="radio" disabled><span>No</span></div>
+                <div>
+                    <label class="fLabel comment">Comments</label>
+                    <textarea ng-model="c.data.reviews[$index].review" disabled></textarea>
+                </div>
+            </div>
+        </div> 
+      <div class="form-group">
+       <label class="fLabel" for="score">Score</label>
+      	<input type="text" ng-model="c.data.score" disabled>
+      </div>
+        <button type="submit" ng-click="c.goBack()">Back</button>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

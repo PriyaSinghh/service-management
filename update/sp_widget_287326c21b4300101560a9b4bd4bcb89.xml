@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$window) {
+  /* widget controller */
+  var c = this;
+	c.data.submited = false;
+	c.data.answers = [];
+	c.getItem = function() {	
+	c.server.update();
+	}
+	c.clicked = function(value,index) {		
+		c.data.answers[index] = value;		
+	}
+	c.addItem = function() {
+	console.log(c.data);
+	c.data.submited = true;
+		if(c.data.selectedAuditee != undefined ){
+			c.server.update();
+			 $window.location = 'https://dev93518.service-now.com/serviceManagement?id=thankyou'
+		} else {
+			alert("Please answer the required field");
+		}	
+	}	
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.form-group{
+ margin-bottom: 25px;
+}
+.fLabel{
+	clear:both;
+  width:100%;
+  color: #303030;
+  font-size: 15px;
+}
+.fLabel.comment{  
+  color: #707070;
+  font-size: 13px;
+}
+.inspDd{
+	width:100%;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, .06);
+  padding: 10px 15px;
+}
+.questions{
+margin-bottom: 15px;
+}
+
+.questions input[type=radio]{
+width: 20px;
+  height:20px;
+  margin-right: 10px;
+  float:left
+}
+.radioOptions{
+margin-right: 50px;
+  display: inline-block;
+}
+.questions span{
+  line-height: 25px;
+  float:left
+}
+.mainContainer{
+  	border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 25px;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto 50px auto;
+    border: 1px solid #5A7F71;
+    background: rgba(255, 255, 255, .5);
+}
+h1{
+margin-bottom:30px;
+  text-align:center;
+}
+input[type=text], textarea{
+	width:100%;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, .06);
+  padding: 10px 15px;
+}
+
+button { 
+        background-color: #5A7F71; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px auto; 
+        border: none; 
+        cursor: pointer; 
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px 1px rgba(76,175,80,0.5);
+  			margin:0px auto;
+    } 
+    /* set a hover effect for the button*/ 
+      
+    button:hover { 
+        opacity: 0.8; 
+    } 
+.conditionalGroup{display: grid;}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>inspection_form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>inspection form</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  
+	data.requestType = [];		
+	data.questions = [];
+	data.auditeeName = [];
+	data.question_weightage = [];
+	data.review_comments = [];
+	/* TO GET THE REQUEST TYPE FROM TABLE*/
+	var rt = new GlideRecord('x_429306_service_m_service_management');
+	rt.query();
+	while(rt.next()){
+		var requestTypes = rt.getDisplayValue('request_type');
+		if(data.requestType.indexOf(requestTypes) == -1){
+				data.requestType.push(requestTypes);
+		}	
+	}
+	
+	if(input){
+		
+	/* TO GET THE QUESTION BASED ON REQUEST TYPE FROM TABLE*/
+
+	
+			var q = new GlideRecord('x_429306_service_m_service_management');
+			q.addQuery('request_type',input.selectedType);
+			q.query();
+			while(q.next()){
+			data.questions.push(q.getDisplayValue('questions'));
+			data.question_weightage.push(q.getDisplayValue('question_weightage'));
+			data.review_comments.push("");
+			}
+
+			var auditee = new GlideRecord('x_429306_service_m_auditee_details');
+			auditee.query();		
+			while(auditee.next()){
+			data.auditeeName.push(auditee.getDisplayValue('auditee_name'));
+			}
+		
+	
+	
+	/* TO INSERT RESULTS INTO TABLE*/
+		
+		if(input.submited == true){
+			var insert = new GlideRecord('x_429306_service_m_service_review');
+			insert.initialize();
+			insert.request_type = input.selectedType;
+			insert.auditee = input.selectedAuditee;
+		for(var i=0;i< input.questions.length;i++){
+				var name = input.questions[i];
+				insert.question_answer[name] = input.answers[i];
+				insert.question_weightage[name] = input.question_weightage[i];
+				insert.review_comments[name] = input.review_comments[i];
+				}			
+				insert.insert();			
+			}			
+}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-20 07:08:47</sys_created_on>
+        <sys_id>287326c21b4300101560a9b4bd4bcb89</sys_id>
+        <sys_mod_count>378</sys_mod_count>
+        <sys_name>inspection form</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_287326c21b4300101560a9b4bd4bcb89</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-03 12:34:57</sys_updated_on>
+        <template><![CDATA[<h1>Service Details Form</h1>
+<div class="mainContainer">
+    <div class="form-group">
+        <label class="fLabel" for="requestType">Please choose a request type:</label>
+        <select class="inspDd" id="request" ng-model="c.data.selectedType" ng-change="c.getItem()">
+        <option value="{{request}}"  ng-repeat= "request in data.requestType ">{{request}}</option>
+    </select>
+    </div>
+    <div class="conditionalGroup" ng-if="c.data.selectedType">
+        <div class="form-group">
+            <label class="fLabel">Please provide the auditee name</label>
+             <select class="inspDd" id="request" ng-model="c.data.selectedAuditee">
+        <option value="{{auditee}}"  ng-repeat= "auditee in data.auditeeName ">{{auditee}}</option>
+          </select>
+      </div>
+    <div class="questions" ng-repeat="question in data.questions">
+            <div class="form-group">
+                <label class="fLabel" ng-model="c.data.questions">{{question}}</label>
+                <div class="radioOptions"><input ng-click="c.clicked(true,$index)" name="{{question}}" value="true" id="true" type="radio"><span>Yes</span></div>
+                <div class="radioOptions"><input ng-click="c.clicked(false,$index)" name="{{question}}" value="false" id="false" type="radio"><span>No</span></div>
+                <div>
+                    <label class="fLabel comment">Comments</label>
+                  <textarea ng-model="c.data.review_comments[$index]"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" ng-click="c.addItem()">Submit</button>
+    </div>  
+  </div>]]></template>
+    </sp_widget>
+</record_update>

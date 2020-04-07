@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>true</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_429306_service_m_service_review</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Score Calculation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions>supervisor,admin,inspector</role_conditions>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+	var obj = new GlideRecord('x_429306_service_m_service_review');
+	obj.initialize();
+	var answer = current.answer;
+	while (obj.next()) {		
+        if (answer == false) {        
+            obj.score = 0;
+        }
+	}
+	obj.update();
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 11:04:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>62a61ce61b8740101560a9b4bd4bcb12</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Score Calculation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sys_script_62a61ce61b8740101560a9b4bd4bcb12</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 07:05:44</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=62a61ce61b8740101560a9b4bd4bcb12"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sys_script_62a61ce61b8740101560a9b4bd4bcb12</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;true&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_429306_service_m_service_review&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Score Calculation&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions&gt;supervisor,admin,inspector&lt;/role_conditions&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+	var obj = new GlideRecord('x_429306_service_m_service_review');
+	obj.initialize();
+	var answer = current.answer;
+	while (obj.next()) {		
+        if (answer == false) {        
+            obj.score = 0;
+        }
+	}
+	obj.update();
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-21 11:04:50&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;62a61ce61b8740101560a9b4bd4bcb12&lt;/sys_id&gt;&lt;sys_mod_count&gt;23&lt;/sys_mod_count&gt;&lt;sys_name&gt;Score Calculation&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Service Management" source="x_429306_service_m"&gt;b93d5d7d1b0300101560a9b4bd4bcbfc&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Service Management"&gt;b93d5d7d1b0300101560a9b4bd4bcbfc&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_62a61ce61b8740101560a9b4bd4bcb12&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-25 07:05:44&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=62a61ce61b8740101560a9b4bd4bcb12"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>999963018</payload_hash>
+        <record_name>Score Calculation</record_name>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 07:05:44</sys_created_on>
+        <sys_id>f0b294f31b4300101560a9b4bd4bcb60</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1707b2a73440000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 07:05:44</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>f8b294f3d54300102ae715a89ccd045f</update_guid>
+        <update_guid_history>f8b294f3d54300102ae715a89ccd045f:999963018,bdf09873b9430010390fa6692cbb0716:509828714,06bf403356430010bedd35e2d9b088cc:-1505513660,17ccc07fcc0300108f4068e2cdee834b:1012920395,6bdb803f62030010ce80940b363eb126:1778016169,489808f780030010eec6a4ec93160d95:129455082,e37788f7ea030010db99d824237ebbb6:-314103385,f8b680f76c030010455d1a2d74a803cc:500722411,8f7640f71d0300109018a5648dd9908c:-1330336444,422540f37d030010bebc748d1755695c:1526473380,8cc344b34603001010e0e7b6605d3796:-1434819617,926b246bff834010f640c044874356ec:1672632768,70a9a4e7e38340108290acf5036c1b05:1533536955,9179e8a7a2834010c8a64af9ae04e701:-325820641,8567206766834010fbe4a2e8a859e89a:1496775487,cdf528e3b58340107800ffadd58a1a5a:1517255668,f053606348834010000e73a796d18a34:-1125995670,ac8f542f384340100890f1b119083501:-1544360715,537d18ab1b4340108e3d96fca0442f4c:697161663,126c18ab3d434010ab80dd8f5370a329:1127271134,6d5cd0ab114340107ade08872a9643f3:-666095093,253cd06b1e434010bfaeec4fe118c8e1:-2092152109,d74f3fdfdfcf0010fb88715a1ad090a2:1968841286,9413eca200c74010cbe2cf804e4da584:1927632272</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-25 07:19:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>8f5cfd360f4348839a97103defbf7c09</sys_id>
+        <sys_metadata>62a61ce61b8740101560a9b4bd4bcb12</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Score Calculation</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent display_value="">4221bb161b0740101560a9b4bd4bcb77</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sys_script_62a61ce61b8740101560a9b4bd4bcb12</sys_update_name>
+        <sys_update_version display_value="sys_script_62a61ce61b8740101560a9b4bd4bcb12">f0b294f31b4300101560a9b4bd4bcb60</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 07:19:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

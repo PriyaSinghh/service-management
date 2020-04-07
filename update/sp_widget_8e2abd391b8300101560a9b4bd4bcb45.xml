@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function loginCtrl($scope, $http, $window, $location, glideUserSession, glideSystemProperties, spUtil) {
+
+	var c = this;		
+	c.login = function(username, password) {
+		var url = spUtil.getURL({sysparm_type: 'view_form.login'});
+		
+		// If the page isn't public, then the ID in the
+		// URL won't match the rendered page ID
+		var pageId = $location.search().id || $scope.page.id;
+		var isLoginPage = $scope.portal.login_page_dv == pageId;
+
+		return $http({
+			method: 'post',
+			url: url,
+			data: $.param({
+				'sysparm_type': 'login',
+				'ni.nolog.user_password': true,
+				'remember_me': !!c.remember_me ? true : false,
+				'user_name': username,
+				'user_password': password,
+				'get_redirect_url': true,
+				'sysparm_goto_url': isLoginPage ? null : $location.url(),
+				'mfa_redirect_url': c.data.pageURI
+			}),
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
+		}).then(function(response) {
+			if (!response.data) {
+				c.message = $scope.data.errorMsg;
+				return;
+			}
+
+			if (response.data.status == 'success') {
+					handleLoginSuccess.call(response);
+			} else if (response.data.status == 'mfa_code_required') {
+					$window.location = '/validate_multifactor_auth_code.do';
+			} else {
+				// wrong username or password
+				c.message = response.data.message;
+				c.password = "";
+				c.username = "";
+				angular.element("#uname").focus();
+			}
+
+		}, function errorCallback(response) {
+			c.message = $scope.data.errorMsg;
+		});
+	};
+
+
+	function handleLoginSuccess() {
+		c.success = this.data.message;
+				console.log(c);
+		
+				glideUserSession.loadCurrentUser().then(function(currentUser) {
+					console.log(currentUser.userName);
+					if(currentUser.hasRoleExactly('admin') == true || currentUser.hasRoleExactly('supervisor') == true){
+						$window.location = 'https://dev93518.service-now.com/serviceManagement?id=dashboard';
+		
+					} else {
+						
+						$window.location = 'https://dev93518.service-now.com/serviceManagement?id=inspection_details';
+
+					}
+
+      });
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>form { 
+        border: 3px solid #f1f1f1; 
+    } 
+    /*assign full width inputs*/ 
+      
+    input[type=text], 
+    input[type=password] { 
+        width: 100%; 
+        padding: 12px 20px; 
+        margin: 8px 0; 
+        display: inline-block; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box; 
+    } 
+    /*set a style for the buttons*/ 
+.butHolder{ width:100%; float:left; margin:0 0 20px 0; text-align:center;}
+    button { 
+        background-color: #293e40; 
+        color: white; 
+        padding: 15px 40px; 
+        border: none; 
+        cursor: pointer; 
+        width:auto; 
+    } 
+    /* set a hover effect for the button*/ 
+      
+    button:hover { 
+        opacity: 0.8; 
+    } 
+    /*set extra style for the cancel button*/ 
+      
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    } 
+    /*centre the display image inside the container*/ 
+      
+    .siteLogo { 
+        text-align: center; 
+        margin: 24px 0 12px 0; 
+    } 
+    /*set image properties*/ 
+      
+    img.logoImg { 
+        border-radius:50%; 
+      	max-width: 150px;
+      height: auto;
+    } 
+    /*set padding to the container*/ 
+      
+    .formContainer { 
+        padding: 50px 30px; 
+      max-width: 450px;
+      margin: 0 auto;
+   box-sizing: border-box;
+      background: #FFF;
+      border-radius: 10px;
+      border: solid 1px #5A7F71;
+    } 
+ .formBottom { 
+        padding: 30px; 
+      max-width: 550px;
+      margin: 0 auto;
+   box-sizing: border-box;
+    }
+    /*set the forgot password text*/ 
+      
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+.formContainer input[type=text], .formContainer input[type=password]{
+border:1px solid #f5f5f5;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  box-shadow: 0 10px 15px 1px rgba(0,0,0,0.06);
+}
+.mainContainer{
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding-bottom: 100px;
+}
+.formGroup{
+  margin-top: 30px;}
+
+.formGroup button{
+  border-radius: 10px;
+  box-shadow: 0 10px 15px 1px rgba(76,175,80,0.5);
+}
+h1{
+margin-bottom:30px;
+ text-align:center;
+}
+.pageLogo {
+
+}
+    /*set styles for span and cancel button on small screens*/ 
+      
+    @media screen and (max-width: 300px) { 
+        span.psw { 
+            display: block; 
+            float: none; 
+        } 
+        .cancelbtn { 
+            width: 100%; 
+        } 
+    } </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>login_page</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Login page</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+
+	options.show_panel = options.show_panel == "true" || options.show_panel == true;
+	
+	if (input && input.action === "multi_factor_auth_setup") {
+		if (gs.getSession().getProperty("setup_multifactor_authn")) {
+			gs.getSession().putProperty("nav_to", input.directTo);
+			gs.getSession().putProperty("starting_page", input.directTo);
+			gs.getSession().putProperty("is_direct_redirect", "true");
+		}
+		return;
+	}
+	
+	// We don't want to set a starting page until we've begun the login process.
+	if (input && input.action === "set_sso_destination") {
+			data.roles = gs.getSession().getProperty();
+		var gs_nav_to = gs.getSession().getProperty("nav_to");
+		gs.getSession().putProperty("nav_to", null);
+		if (!gs.getSession().getProperty("starting_page"))
+			gs.getSession().putProperty("starting_page", gs_nav_to);
+
+		return;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-19 09:29:54</sys_created_on>
+        <sys_id>8e2abd391b8300101560a9b4bd4bcb45</sys_id>
+        <sys_mod_count>172</sys_mod_count>
+        <sys_name>Login page</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_8e2abd391b8300101560a9b4bd4bcb45</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-27 10:30:00</sys_updated_on>
+        <template><![CDATA[<h1>
+  Service Management Login
+  </h1>
+<div class="mainContainer" >
+
+  <div class="siteLogo">
+        <img src="https://www.nicepng.com/png/detail/302-3026464_png-file-svg-login-member-icon-png.png" alt="Avatar" class="logoImg">
+    </div>
+
+    <div class="formContainer">
+        <div class="formGroup">
+            <label>Username</label>
+            <input type="text" ng-model="c.username" placeholder="Enter Username" name="uname" required>
+        </div>
+        <div class="formGroup">
+            <label>Password</label>
+            <input type="password" ng-model="c.password" placeholder="Enter Password" name="psw" required>
+        </div>
+      <div ng-if="c.message" class="alert alert-danger login-alert" role="alert">{{c.message}}</div>
+				<div ng-if="c.success" class="alert alert-success login-alert" role="alert">{{c.success}}</div>
+
+        <div class="formGroup">
+            <div class="butHolder"><button type="button" ng-click="c.login(c.username, c.password)">Login</button></div>
+            <input type="checkbox" checked="checked"> Remember me
+        </div>
+    </div>
+</div>
+    
+]]></template>
+    </sp_widget>
+</record_update>

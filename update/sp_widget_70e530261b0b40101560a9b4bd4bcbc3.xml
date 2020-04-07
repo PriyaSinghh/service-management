@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$window) {
+  /* widget controller */
+  var c = this;
+	c.callUrl = function(index) {
+		  var auditee = $scope.data.tasks[index].auditee;
+			$window.location = 'https://dev93518.service-now.com/serviceManagement?id=service_details&request_type=' + auditee;
+
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.tableNarrow{
+max-width: 850px;
+  width:100%;
+  margin: 0 auto;
+}
+
+.tableContainer{
+  border: 1px solid #5A7F71;
+  padding: 30px; 
+  border-radius: 0 15px 15px 15px;
+  background:rgba(255,255,255,0.5);
+  margin-bottom: 50px;
+}
+
+.customTabs .tabButton{
+background-color: #5A7F71;
+  color:#FFF;
+  border:0;
+  padding: 8px 22px;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  margin: 0 10px 0 0;
+}
+
+.customTabs .tabButton.active{
+background-color:#293e40;
+}
+
+table.tableStyle {
+    display: flex;
+}
+
+table.tableStyle tbody {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+table.tableStyle tbody tr {
+background: #FFF;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, .07);
+    margin-bottom: 15px;
+    flex: 1;
+    display: flex;
+    padding: 7px;
+  border-radius: 10px;} 
+
+table.tableStyle tbody tr:first-child {
+background: none;
+color: #5A7F71; 
+box-shadow: none;
+  margin: 0;
+  padding: 5px 10px;
+} 
+
+table.tableStyle tbody tr &gt; * {
+    flex: 1;
+    line-height: 30px;
+    padding: 0 15px;
+}
+
+table.tableStyle tbody tr &gt; *:last-child {
+  flex: 0 0 60px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>display_list_of_services</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Display list of services</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    
+	data.tasks = [];	
+	
+	/* TO GET THE REQUEST TYPE FROM TABLE*/
+	var rt = new GlideAggregate('x_429306_service_m_service_review');
+	rt.addAggregate("COUNT");
+	rt.groupBy("request_type");
+	rt.groupBy("auditee");	
+	rt.groupBy("status");
+	rt.groupBy("score");
+	rt.query();
+	while(rt.next()){
+		var task = {};
+		task.auditee =  rt.getDisplayValue('auditee');
+		task.request_type =  rt.getDisplayValue('request_type');
+		task.status = rt.getDisplayValue('status');
+		task.score = rt.getDisplayValue('score');
+			data.tasks.push(task);
+	}
+	console.log(data.tasks);
+})(); ]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 12:27:04</sys_created_on>
+        <sys_id>70e530261b0b40101560a9b4bd4bcbc3</sys_id>
+        <sys_mod_count>118</sys_mod_count>
+        <sys_name>Display list of services</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sp_widget_70e530261b0b40101560a9b4bd4bcbc3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-28 06:00:52</sys_updated_on>
+        <template><![CDATA[<div class="tableContainer">    
+<table class="tableStyle">
+  <tr>
+    <th>Auditee</th>
+    <th>Request type</th>
+    <th>Status</th>
+    <th>Score</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat= "task in data.tasks ">
+    <td >{{task.auditee}}</td>
+     <td>{{task.request_type}}</td>
+    <td>{{task.status}}</td>
+    <td>{{task.score}}</td>
+    <td><a ng-click="c.callUrl($index)" href="#">
+      <img src="https://icons.iconarchive.com/icons/saki/nuoveXT/128/Small-arrow-right-fast-forward-icon.png" width="30"></a></td>
+  </tr>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Service Users">05ca4de61b4b40101560a9b4bd4bcb37</application>
+        <filter/>
+        <name>Service Users</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_429306_service_m.service_users_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 13:58:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>41ca4de61b4b40101560a9b4bd4bcb46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Users</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_update_name>sys_ui_module_41ca4de61b4b40101560a9b4bd4bcb46</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-21 13:58:17</sys_updated_on>
+        <table>x_429306_service_m_service_users</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</application>
+        <file_path/>
+        <instance_id>8dc40934db0cc0500b9d21c4059619c3</instance_id>
+        <instance_name>dev93518</instance_name>
+        <name>sys_ui_module_41ca4de61b4b40101560a9b4bd4bcb46</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Service Users">05ca4de61b4b40101560a9b4bd4bcb37</application><filter/><name>Service Users</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_429306_service_m.service_users_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-02-21 13:58:17</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>41ca4de61b4b40101560a9b4bd4bcb46</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Users</sys_name><sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package><sys_policy/><sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope><sys_update_name>sys_ui_module_41ca4de61b4b40101560a9b4bd4bcb46</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-02-21 13:58:17</sys_updated_on><table>x_429306_service_m_service_users</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>1060804113</payload_hash>
+        <record_name>Service Users</record_name>
+        <reverted_from/>
+        <source>bd3d5d7d1b0300101560a9b4bd4bcbfe</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-21 13:58:17</sys_created_on>
+        <sys_id>c9ca4de61b4b40101560a9b4bd4bcb47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>170680ab8810000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-21 13:58:17</sys_updated_on>
+        <type>Module</type>
+        <update_guid>05ca4de6fa4b4010e70d7bcedfcd6147</update_guid>
+        <update_guid_history>05ca4de6fa4b4010e70d7bcedfcd6147:1060804113</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-24 11:00:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>583b9e6084754208adba0846b5505640</sys_id>
+        <sys_metadata>41ca4de61b4b40101560a9b4bd4bcb46</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Users</sys_name>
+        <sys_package display_value="Service Management" source="x_429306_service_m">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Service Management">b93d5d7d1b0300101560a9b4bd4bcbfc</sys_scope>
+        <sys_scope_delete display_value="">03f4c74f0858406e82ee356d973b1c24</sys_scope_delete>
+        <sys_update_name>sys_ui_module_41ca4de61b4b40101560a9b4bd4bcb46</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_41ca4de61b4b40101560a9b4bd4bcb46">c9ca4de61b4b40101560a9b4bd4bcb47</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-24 11:00:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

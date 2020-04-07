@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Inspection Questions" max_length="40" name="x_429306_service_m_service_management" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Questions" max_length="150" name="questions" type="string"/>
+        <element label="Question weightage" max_length="20" name="question_weightage" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Request Type" max_length="40" name="request_type" type="string"/>
+    </element>
+</database>
